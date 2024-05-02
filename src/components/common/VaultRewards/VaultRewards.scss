@@ -1,0 +1,74 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.V-Rewards {
+  text-align: center;
+  border: 1px solid;
+  border-radius: 10px;
+  @include theme() {
+    border-color: theme-get("dotBg");
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 30px;
+  }
+  h3 {
+    padding: 15px;
+    border: 1px solid;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 0;
+    @include theme() {
+      border-color: theme-get("dotBg");
+      background-color: theme-get("borderClr3");
+    }
+  }
+  .wrap_reward {
+    padding: 30px;
+    @media (max-width: 767px) {
+      padding: 20px;
+    }
+    .base {
+      padding: 18px;
+      margin: auto;
+      border: 1px solid;
+      border-radius: 10px;
+      @include theme() {
+        border-color: theme-get("dotBg");
+      }
+      @media (max-width: 767px) {
+        padding: 10px;
+      }
+      h2 {
+        font-size: 25px;
+        margin-bottom: 0;
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+        @media (max-width: 767px) {
+          font-size: 20px;
+        }
+      }
+      .icon_img {
+        img {
+          width: 24px;
+          margin-right: 10px;
+          margin-top: -4px;
+        }
+      }
+      p {
+        margin-bottom: 0;
+        @include theme() {
+          color: theme-get("linkColor");
+        }
+      }
+    }
+    .reward_buttons {
+      margin-top: 25px;
+      display: flex;
+      gap: 20px;
+      .claimButton {
+        width: 50%;
+      }
+    }
+  }
+}

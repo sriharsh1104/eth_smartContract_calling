@@ -1,0 +1,140 @@
+@import "../../assets/theme/_var.scss";
+@import "../../assets/theme/_mixins.scss";
+
+.Error-repair {
+  background-color: black;
+  color: $white;
+  height: 100%;
+  min-height: 100vh;
+
+  .Error-main {
+    width: 100%;
+  }
+  .repair-title {
+    text-align: center;
+    color: $white;
+    font-weight: 600;
+    line-height: 2;
+    margin: 0;
+    @include fluid-type(320px, 1920px, 20px, 40px);
+  }
+  p {
+    color: $white;
+    text-align: center;
+
+    font-weight: 400;
+    @include fluid-type(320px, 1920px, 12px, 18px);
+  }
+  .media_links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 135px;
+    .icon {
+      width: 62px;
+      height: 55px;
+      position: relative;
+
+      i {
+        background-size: 25px;
+        width: 26px;
+        height: 25px;
+        content: "";
+        left: 0;
+        position: absolute;
+        background-repeat: no-repeat;
+        right: 0;
+        margin: auto;
+        top: 19px;
+        &.telegram {
+          background-image: url("../../assets/images/telgramwhite.svg");
+
+          &:hover {
+            background-image: url("../../assets/images/g-telegram.svg");
+          }
+        }
+        &.master {
+          background-image: url("../../assets/images/mwhite.svg");
+          &:hover {
+            background-image: url("../../assets/images/Mcolor.svg");
+          }
+        }
+        &.twitter {
+          background-image: url("../../assets/images/twitterwhite.svg");
+
+          &:hover {
+            background-image: url("../../assets/images/g-twitter.svg");
+          }
+        }
+
+        &.Book {
+          background-image: url("../../assets/images/bookwhite.svg");
+
+          &:hover {
+            background-image: url("../../assets/images/bookcolor.svg");
+          }
+        }
+
+        &.Linkin {
+          background-image: url("../../assets/images/inwhite.svg");
+
+          &:hover {
+            background-image: url("../../assets/images/inwhite.svg");
+          }
+        }
+      }
+    }
+  }
+}
+
+.astro-page {
+  background-color: black;
+  min-height: 100vh;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  .Oxy-textsec {
+    padding-left: 135px;
+    @media (max-width: 992px) {
+      padding-left: 10px;
+    }
+    .Num-title {
+      color: $white;
+      font-weight: 600;
+      margin: 0;
+      line-height: normal;
+      @include fluid-type(320px, 1920px, 90px, 144px);
+    }
+    .sub-title {
+      color: $white;
+      font-weight: 600;
+      margin-bottom: 10px;
+      @include fluid-type(320px, 1920px, 20px, 40px);
+    }
+    .defination {
+      font-weight: 400;
+      font-size: 18px;
+      color: $border;
+      max-width: 550px;
+      padding-right: 10px;
+      margin-bottom: 50px;
+      @include fluid-type(320px, 1920px, 10px, 18px);
+    }
+    .go-back {
+      background-color: $buttonError;
+      color: white;
+    }
+  }
+  .Error-img {
+    width: 100%;
+    height: 900px;
+    max-width: 720px;
+
+    @media (max-width: 768px) {
+      height: 560px;
+    }
+    @media (max-width: 480px) {
+      height: 420px;
+    }
+  }
+}

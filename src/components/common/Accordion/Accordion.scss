@@ -1,0 +1,48 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+.ant-collapse-header {
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36px;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+  div {
+    position: absolute;
+    right: 0px;
+  }
+}
+.font_accordiontext {
+  li {
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 27px;
+      font-family: Poppins;
+      padding-left: 20px;
+      position: relative;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        height: 6px;
+        width: 6px;
+        left: 2px;
+        top: 9px;
+        border-radius: 100%;
+        background-color: #19cfdd;
+      }
+      @media (max-width: 767px) {
+        font-size: 14px;
+        line-height: 21px;
+      }
+    }
+  }
+}
+.ant-collapse-content-box {
+  @include theme() {
+    background-color: theme-get("baseBg");
+  }
+}

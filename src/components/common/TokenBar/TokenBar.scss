@@ -1,0 +1,181 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.token_bar {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  .token_info {
+    display: flex;
+    flex-direction: row;
+    @include theme() {
+      background: theme-get("fieldBg");
+    }
+    flex-wrap: wrap;
+    width: 100%;
+    box-shadow: 0px 0px 30px rgb(0 0 0 / 7%);
+    padding: 30px 35px;
+    border-radius: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    @media (max-width: 991px) {
+      padding: 20px;
+      margin-bottom: 15px;
+      flex-direction: column;
+    }
+
+    .token_name {
+      @media (max-width: 991px) {
+        max-width: 250px;
+        margin-right: auto;
+        margin-bottom: 15px;
+      }
+      img {
+        width: 40px;
+        margin-right: 14px;
+      }
+      .token_platform {
+        p {
+          text-transform: uppercase;
+          @include theme() {
+            color: theme-get("linkActvie");
+          }
+          margin-bottom: 0;
+          font-size: 18px;
+          font-weight: 600;
+          line-height: 24px;
+          @media (max-width: 767px) {
+            font-size: 16px;
+            line-height: 15px;
+          }
+        }
+        .swaping_paltform {
+          @include theme() {
+            color: theme-get("linkColor");
+          }
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+          @media (max-width: 767px) {
+            font-size: 11px;
+          }
+        }
+      }
+      .create_pair {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 14px;
+        .coin_imgs {
+          img {
+            width: 28px;
+            height: 28px;
+            @media (max-width: 991px) {
+              width: 28px;
+            }
+          }
+          &.uppr {
+            position: relative;
+            z-index: 1;
+          }
+          &.down {
+            margin-left: 13px;
+            position: relative;
+            top: -14px;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    .token_wallet {
+      flex: 1 1 0px;
+      gap: 0;
+      justify-content: flex-end;
+      align-items: flex-start;
+      @media (max-width: 991px) {
+        justify-content: flex-start;
+      }
+      @media (max-width: 767px) {
+        flex-wrap: wrap;
+        gap: 20px 0;
+      }
+      .wallet_view {
+        flex-basis: 150px;
+        text-align: center;
+        @media (max-width: 1199px) {
+          flex-basis: 120px;
+        }
+        @media (max-width: 767px) {
+          flex-basis: 50%;
+          text-align: left;
+        }
+
+        p {
+          margin-bottom: 0;
+          font-weight: 400;
+          font-size: 14px;
+          @include theme() {
+            color: theme-get("linkColor");
+          }
+          @media (max-width: 767px) {
+            font-size: 11px;
+          }
+          &.w_amount {
+            font-size: 16px;
+            margin-top: 5px;
+            @media (max-width: 767px) {
+              margin-top: 0;
+            }
+          }
+          &.define_apy {
+            font-weight: 600;
+            @include theme() {
+              color: theme-get("linkActvie");
+            }
+          }
+        }
+      }
+    }
+    &::before {
+      display: block;
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: $Gradient-1;
+      -webkit-filter: blur(12px);
+      filter: blur(12px);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    &:hover {
+      &::before {
+        opacity: 1;
+      }
+    }
+  }
+  &:hover {
+    color: inherit;
+    .token_wallet {
+      .wallet_view {
+        .w_amount {
+          @include theme() {
+            color: theme-get("linkActvie");
+          }
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+.show_deprecated {
+  margin: 40px 0;
+  text-align: center;
+  @media (max-width: 767px) {
+    margin: 25px 0;
+  }
+}

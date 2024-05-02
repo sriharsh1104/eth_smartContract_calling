@@ -1,0 +1,107 @@
+@import "../../../../assets/theme/_var.scss";
+@import "../../../../assets/theme/_mixins.scss";
+
+.claimModal {
+  &.connect_wallet {
+    max-width: 400px;
+  }
+
+  .claimWallet {
+    &__item {
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__wallet {
+      padding: 14px 20px;
+      border-radius: 10px;
+      display: block;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      @include theme() {
+        color: theme-get("linkActvie");
+        background: theme-get("swapBg");
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        margin-right: 20px;
+      }
+
+      &--disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.claimAmountModal {
+  &.connect_wallet {
+    max-width: 470px;
+  }
+
+  .claimAmount {
+    &__avialable {
+      background: $Gradient-2;
+      border-radius: 10px;
+      padding: 6px 16px;
+      display: flex;
+      align-items: center;
+      &__content {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 30px;
+        color: $white;
+        margin-left: 15px;
+        small {
+          font-size: 14px;
+          display: block;
+        }
+      }
+    }
+    &__text {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 21px;
+      margin: 20px 0;
+      @include theme() {
+        color: theme-get("linkColor");
+      }
+    }
+    &__wallet {
+      font-weight: 400;
+      font-size: 16px;
+      margin-bottom: 20px;
+      @include theme() {
+        color: theme-get("linkActvie");
+      }
+      p {
+        margin-bottom: 5px;
+      }
+      .ant-input {
+        border: 1px solid #afafaf;
+        border-radius: 5px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        padding: 5px 16px;
+        @include theme() {
+          color: theme-get("linkActvie");
+        }
+
+        &::placeholder {
+          @include theme() {
+            color: theme-get("linkActvie");
+          }
+        }
+      }
+    }
+    &__button {
+      width: 100%;
+    }
+  }
+}

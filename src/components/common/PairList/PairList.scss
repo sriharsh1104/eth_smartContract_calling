@@ -1,0 +1,61 @@
+@import "../../../assets/theme/_var.scss";
+@import "../../../assets/theme/_mixins.scss";
+
+.pairList {
+  border: 1px solid;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  @include theme() {
+    color: theme-get("linkActvie");
+    border-color: theme-get("borderClr");
+  }
+  @media (max-width: 991px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
+  .pairList_Head {
+    display: flex;
+    padding: 17px 30px;
+    border-bottom: 1px solid;
+    @media (max-width: 767px) {
+      padding: 12px 20px;
+    }
+    @include theme() {
+      border-color: theme-get("borderClr");
+    }
+    li {
+      flex: 0 0 33.33%;
+    }
+  }
+  .pairList_Body {
+    padding: 0 15px;
+    li {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+
+      .pairContent {
+        flex: 0 0 33.33%;
+
+        img {
+          margin-right: 10px;
+        }
+
+        .best {
+          background: rgba(0, 211, 149, 0.1);
+          color: $greenColor;
+          font-size: 13px;
+          padding: 5px 25px;
+          border-radius: 14px;
+        }
+      }
+    }
+  }
+
+  .textCenter {
+    text-align: center;
+  }
+}
