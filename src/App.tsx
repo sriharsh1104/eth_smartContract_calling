@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import logo from './logo.svg';
 import './App.css';
  
 const App: React.FC = () => {
@@ -34,7 +33,6 @@ const App: React.FC = () => {
        {
          isMetamaskInstalled ? (
            <div>
-             <img src={logo} alt="logo" />
              <button onClick={connectMetamaskWallet}>Connect Your Metamask Wallet</button>
            </div>
          ) : (
@@ -50,7 +48,6 @@ const App: React.FC = () => {
  return (
    <div className="App">
      <header className="App-header">
-       <img src={logo} className="App-logo" alt="logo" />
        <p>
          ETH wallet connected as: {ethereumAccount}
        </p>
