@@ -73,12 +73,7 @@ const ConnectWallet = (props) => {
                 </button>
               </li>
               <li>
-                <button className="connect_btn">
-                  <span>
-                    <img src={Wallet} alt="icon" />
-                  </span>
-                  WalletConnect
-                </button>
+                
               </li>
               <li>
                 <div className="connect_btn check_area">

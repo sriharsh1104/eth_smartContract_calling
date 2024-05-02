@@ -36,21 +36,6 @@ const language = [
 
 const Header = (props) => {
   const dispatch = useDispatch();
-  // const { t } = useTranslation();
-  const [ischecked, setIsChecked] = useState(false);
-  const currentLocation = cookies.get("i18next") || "en";
-  const [day, setDay] = useState(false);
-  // const selectTheme = useSelector((state) => state.theme.themeColor);
-  // const setTheme = selectTheme;
-
-  // const handleChange = () => {
-  //   setIsChecked(!ischecked);
-  //   dispatch(toggleTheme());
-  // };
-
-  // useEffect(() => {
-  //   document.body.className = setTheme;
-  // });
 
   useEffect(() => {
     const theme = localStorage.getItem("theme");
@@ -65,12 +50,10 @@ const Header = (props) => {
   async function toggleTheme() {
     const theme = await localStorage.getItem("theme");
     if (theme === "dark") {
-      setDay(false);
       document.body.classList.remove("darkTheme");
       document.body.classList.add("lightTheme");
       localStorage.removeItem("theme");
     } else {
-      setDay(true);
       document.body.classList.remove("lightTheme");
       document.body.classList.add("darkTheme");
       localStorage.setItem("theme", "dark");
@@ -166,26 +149,11 @@ const Header = (props) => {
                       className={`menu_toggle ${classToggle ? "open" : ""}`}
                       onClick={() => setClassToggle(!classToggle)}
                     >
-                      {/* <div className="icon_left"></div>
-                      <div className="icon_right"></div> */}
                       {classToggle ? <CloseIcon /> : <MobMenu />}
                     </button>
                   </div>
 
-                  {/* for wallet is not connected  */}
-                  {/* <ConnectWalletBtn /> */}
-
-                  {/* for wallet is connected  */}
                   <WalletDisconnect />
-
-                  {/* <Tooltip
-                  placement="bottom"
-                  title="YSL balance represents the total YSL you currently hold in your wallet and/or have staked within the YSL vault."
-                >
-                  <button className="connect_wallet_style connected_wllet">
-                    hello
-                  </button>
-                </Tooltip> */}
                 </div>
               </div>
             </Row>
@@ -222,11 +190,7 @@ const Header = (props) => {
           <p>Auditied By</p>
           <PeckShieldIcon />
         </div>
-        {/* for wallet is not connected  */}
         <ConnectWalletBtn />
-
-        {/* for wallet is connected  */}
-        {/* <WalletDisconnect /> */}
       </div>
     </>
   );
