@@ -1,0 +1,1 @@
+export const StakeAddress = "0x72bDe32474896d4b3745D80047Fb8767d3848878"
