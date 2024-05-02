@@ -115,7 +115,7 @@ const RemoveLiqInModal = (props) => {
           toast.success("Liquidity Removed")
         }
         } catch(err){
-          if(err?.code == 4001){
+          if(err?.code === 4001){
             toast.error("User denied Transaction")
           }
         else {
@@ -133,7 +133,7 @@ const RemoveLiqInModal = (props) => {
         toast.success("Liquidity Removed")
       } 
     }catch(err){
-      if(err?.code == 4001){
+      if(err?.code === 4001){
         toast.error("User denied Transaction")
 
       }

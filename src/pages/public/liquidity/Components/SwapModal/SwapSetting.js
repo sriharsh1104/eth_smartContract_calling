@@ -52,7 +52,7 @@ const SwapSetting = (props) => {
   }
 
   const GasFeeFunction = (e, key) => {
-    key == 1 ? dispatch(setuserSelectedPrice(lowPrice)) : key == 2 ? dispatch(setuserSelectedPrice(averagePrice)) : dispatch(setuserSelectedPrice(highPrice))
+    key === 1 ? dispatch(setuserSelectedPrice(lowPrice)) : key === 2 ? dispatch(setuserSelectedPrice(averagePrice)) : dispatch(setuserSelectedPrice(highPrice))
 
   }
   return (

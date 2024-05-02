@@ -94,7 +94,7 @@ const CoinInput = ({
     else {
       setInputvalueOne(e.target.value)
     }
-    if (e.target.value == '') {
+    if (e.target.value === '') {
       // setInputvalueOne(inputvalueOne)
       dispatch(setInputValue1(0))
       setInputvalueTwo(0)
@@ -115,7 +115,7 @@ const CoinInput = ({
     else {
       setInputvalueTwo(e.target.value)
     }
-    if (e.target.value == '') {
+    if (e.target.value === '') {
       dispatch(setInputValue2(0))
       setInputvalueOne(0)
 

@@ -157,7 +157,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
     let deadLine = Math.floor(new Date().getTime() / 1000);
     deadLine = deadLine + 10 * 60;
 
-    if (selectedField == 'Field1') {
+    if (selectedField === 'Field1') {
       try {
         let path = [selectedtoken1.address, selectedtoken2.address];
         let to = waddress.toString();
@@ -179,7 +179,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
           toast.success("Swap Done")
         }
       } catch (error) {
-        if (error.code == 4001) {
+        if (error.code === 4001) {
           setswapButton('');
           toast.error("User denied Transaction");
         }
@@ -190,7 +190,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         }
       }
     }
-    else if (selectedField == 'Field2') {
+    else if (selectedField === 'Field2') {
       try {
         let path = [selectedtoken1.address, selectedtoken2.address];
         let to = waddress.toString();
@@ -212,7 +212,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
       }
       catch (error) {
 
-        if (error?.code == 4001) {
+        if (error?.code === 4001) {
           setswapButton('');
           toast.error("User denied Transaction");
         }
@@ -229,7 +229,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
 
     let deadLine = Math.floor(new Date().getTime() / 1000);
     deadLine = deadLine + 10 * 60;
-    if (selectedField == 'Field1') {
+    if (selectedField === 'Field1') {
       try {
 
         let path = [selectedtoken1.address, selectedtoken2.address];
@@ -254,7 +254,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
       }
       catch (error) {
         console.log("eeeeeeeeeeeeeeeeeeeeeeeee",error);
-        if (error?.code == 4001) {
+        if (error?.code === 4001) {
           setswapButton('');
           toast.error("User denied Transaction");
         }
@@ -265,7 +265,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         }
       }
     }
-    else if (selectedField == 'Field2') {
+    else if (selectedField === 'Field2') {
       try {
         let path = [selectedtoken2.address, selectedtoken1.address];
         // const input1WithSlippage = (input1 / 100) * slippageTolerance + input1;
@@ -289,7 +289,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
       }
       catch (err) {
 
-        if (err?.code == 4001) {
+        if (err?.code === 4001) {
           setswapButton('');
           toast.error("User denied Transaction");
         }
@@ -305,7 +305,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
   const swapTokensWithNativeTokens = async () => {
     let deadLine = Math.floor(new Date().getTime() / 1000);
     deadLine = deadLine + 10 * 60;
-    if (selectedField == "Field1") {
+    if (selectedField === "Field1") {
       let path = [selectedtoken1.address, selectedtoken2.address];
       let to = waddress.toString();
       // const input2WithSlippage = input2 - (input2 / 100) * slippageTolerance;
@@ -325,7 +325,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         setswapButton('');
         toast.success("Swap Done")
       }
-      else if (result?.code == 4001) {
+      else if (result?.code === 4001) {
         setswapButton('');
         toast.error("User denied Transaction");
       }
@@ -335,7 +335,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         toast.error("Swap Failed")
       }
     }
-    else if (selectedField == 'Field2') {
+    else if (selectedField === 'Field2') {
 
       let path = [selectedtoken1.address, selectedtoken2.address];
       let to = waddress.toString();
@@ -356,7 +356,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         setswapButton('');
         toast.success("Swap Done")
       }
-      else if (result?.code == 4001) {
+      else if (result?.code === 4001) {
         setswapButton('');
         toast.error("User denied Transaction");
       }
@@ -466,7 +466,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
   const convertInputValuesOne = async () => {
     if ((selectedtoken1.address && selectedtoken2.address)) {
 
-      if (input1 == "") {
+      if (input1 === "") {
         dispatch(setInputValue2(0));
       } else {
         const array = [selectedtoken1.address, selectedtoken2.address];
@@ -711,7 +711,7 @@ const SwapCard = ({ mode, handleToggle, setPriceImpact }) => {
         </div>
         {/* <ButtonCommon title="UNLOCK WALLET" onClick={() => showModal(true)} /> */}
         {mode === "Swap" ? (
-          <ButtonCommon title={"SWAP"} disabled={swapButton == 'Swapping'} onClick={() => handleSwap()} />
+          <ButtonCommon title={"SWAP"} disabled={swapButton === 'Swapping'} onClick={() => handleSwap()} />
         ) : (
           ""
         )}

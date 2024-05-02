@@ -114,7 +114,7 @@ const SwapCard = ({ mode }) => {
   const firstLiquidityCheck = async () => {
     if ((selectedtoken1 && selectedtoken2) && (selectedtoken1 !== selectedtoken2)) {
       const pairAddress = await getPairHelper(selectedtoken1.symbol, selectedtoken2.symbol);
-      if (pairAddress == 0) {
+      if (pairAddress === 0) {
         setcheckLiquidity('You are the first Liquidity Provider, Choose the liquidity ratio wisely')
       }
       else {
@@ -135,8 +135,8 @@ const SwapCard = ({ mode }) => {
       let tokenAbi = JSON.parse(JSON.stringify(tokenInfo[0].abi));
       const pairAddress = await getPairHelper(selectedtoken1.symbol, selectedtoken2.symbol);
       console.log("Pairaaaaaa",pairAddress)
-      if (selectedField == "Field1") {
-        if (input1 == '') {
+      if (selectedField === "Field1") {
+        if (input1 === '') {
           dispatch(setInputValue2Liquidity(0));
         } else {
           const { token0, token1 } = await getTokenAddress(pairAddress);
@@ -147,7 +147,7 @@ const SwapCard = ({ mode }) => {
           const reserve1 = await contract1.methods.balanceOf(pairAddress).call()
           const reserve2 = await contract2.methods.balanceOf(pairAddress).call()
           console.log("resreeee",reserve1,reserve2);
-          if (selectedtoken1.address == token0) {
+          if (selectedtoken1.address === token0) {
             console.log("alsosos",input1,reserve1,reserve2);
 
             const result = (input1 * reserve2) / reserve1;
@@ -160,8 +160,8 @@ const SwapCard = ({ mode }) => {
             dispatch(setInputValue2Liquidity(result))
           }
         }
-      } else if (selectedField == "Field2") {
-        if (input2 == '') {
+      } else if (selectedField === "Field2") {
+        if (input2 === '') {
           dispatch(setInputValue1Liquidity(0));
         } else {
           // const pairAddress = await getPairHelper(selectedtoken1.symbol, selectedtoken2.symbol);
@@ -172,7 +172,7 @@ const SwapCard = ({ mode }) => {
 
           const reserve1 = await contract1.methods.balanceOf(pairAddress).call();
           const reserve2 = await contract2.methods.balanceOf(pairAddress).call();
-          if (selectedtoken2.address == token0) {
+          if (selectedtoken2.address === token0) {
             const result = (input2 * reserve2) / reserve1;
             dispatch(setInputValue1Liquidity(result))
           }
@@ -223,7 +223,7 @@ const SwapCard = ({ mode }) => {
         toast.success("Add Liquidity Done")
       }
     } catch (err) {
-      if (err?.code == 4001) {
+      if (err?.code === 4001) {
         setswapButton('');
         toast.error("User denied Transaction");
       }
@@ -275,7 +275,7 @@ const SwapCard = ({ mode }) => {
       }
     } catch (err) {
 
-      if (err?.code == 4001) {
+      if (err?.code === 4001) {
         setswapButton('');
         toast.error("User denied Transaction");
       }
@@ -363,7 +363,7 @@ const SwapCard = ({ mode }) => {
       if (result?.status) {
         toast.success("Remove Liquidity Done")
       }
-      else if (result?.code == 4001) {
+      else if (result?.code === 4001) {
         toast.error("User denied Transaction");
       }
       else {
@@ -494,7 +494,7 @@ const SwapCard = ({ mode }) => {
         {mode === "Liquidity" ? (
           <div>
             <ButtonCommon
-              title={swapButton == 'Add Liquidity' ? "Adding Liquidity" : "ADD liquidity"}
+              title={swapButton === 'Add Liquidity' ? "Adding Liquidity" : "ADD liquidity"}
               onClick={() => handleAddLiquidity()}
             />
             <ButtonCommon title="Remove Liquidity"
